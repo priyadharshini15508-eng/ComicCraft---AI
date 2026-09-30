@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ComicCraft AI — Turn ideas into comic stories</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">✦</span><span>ComicCraft <b>AI</b></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <a class="side-link active" href="#"><span>▦</span> Comic Studio</a>
+    <a class="side-link" href="#story-setup"><span>✎</span> Story Prompt</a>
+    <a class="side-link" href="#comic-canvas"><span>▤</span> My Comic</a>
+    <div class="side-card"><div class="sparkle">✧</div><b>Make it a story</b><p>Start with one idea. Build a whole comic world.</p><a href="#story-setup">Create a comic →</a></div>
+    <div class="profile"><div class="profile-avatar">CC</div><div><b>Creator Studio</b><small>Free workspace</small></div><span class="dots">•••</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">Workspace <span>/</span> <b>Comic Studio</b></div><div class="top-actions"><span class="status"><i></i> All changes saved locally</span><div class="user-avatar">KD</div></div></header>
+    <section class="welcome"><div><div class="eyebrow">YOUR CREATIVE PLAYGROUND</div><h1>Bring your ideas to <span>life.</span> ✨</h1><p>Turn a simple prompt into a comic outline, panel by panel.</p></div><div class="welcome-art"><div class="art-sun"></div><div class="art-book">✦<small>POW!</small></div><span class="art-star s1">✦</span><span class="art-star s2">✧</span></div></section>
+    <section class="studio-grid">
+      <article class="panel setup" id="story-setup">
+        <div class="section-title"><div class="step">01</div><div><h2>Describe your story</h2><p>Give your imagination a starting point.</p></div></div>
+        <label for="prompt">STORY IDEA</label>
+        <textarea id="prompt" maxlength="500" placeholder="Example: A shy young inventor builds a tiny robot that accidentally saves the city...">A curious student discovers a mysterious glowing notebook</textarea>
+        <div class="prompt-foot"><span>✧ Be creative — there are no wrong ideas</span><span id="char-count">61 / 500</span></div>
+        <div class="field-row"><div class="field"><label for="genre">ART STYLE</label><select id="genre"><option>Anime</option><option>Superhero</option><option>Funny</option><option>Fantasy</option><option>Sci-Fi</option></select></div><div class="field"><label for="count">PANELS</label><select id="count"><option value="3">3 panels</option><option value="4" selected>4 panels</option><option value="5">5 panels</option><option value="6">6 panels</option></select></div></div>
+        <button class="generate" id="generate"><span>✦</span> Generate comic outline <b>→</b></button>
+        <p class="fine-print">✨ AI-style story starter · Edit every panel after generation</p>
+      </article>
+      <article class="panel preview" id="comic-canvas">
+        <div class="preview-head"><div class="section-title"><div class="step">02</div><div><h2>Your comic preview</h2><p>Your story, frame by frame.</p></div></div><button class="icon-btn" id="download" title="Download comic as PNG">⇩</button></div>
+        <div class="comic-heading"><div><span class="mini-label">UNTITLED COMIC</span><h3 id="comic-title">The Mysterious Notebook</h3></div><span class="page-count" id="page-count">PAGE 01</span></div>
+        <div class="comic-grid" id="panels">
+          <div class="comic-panel"><div class="panel-art art-one"><span class="scene-sun"></span><span class="scene-person">♟</span><span class="scene-cloud">A new day!</span></div><div class="panel-copy"><b>01 · THE SETUP</b><p>Every great story begins somewhere...</p><span class="speech">Let's explore!</span></div></div>
+          <div class="comic-panel"><div class="panel-art art-two"><span class="mystery">✧</span><span class="scene-cloud">Whoa!</span></div><div class="panel-copy"><b>02 · THE DISCOVERY</b><p>A mysterious clue changes everything.</p><span class="speech">What is that?</span></div></div>
+          <div class="comic-panel"><div class="panel-art art-three"><span class="burst">!</span><span class="scene-person">♟</span></div><div class="panel-copy"><b>03 · THE TWIST</b><p>An unexpected obstacle appears.</p><span class="speech">Oh no!</span></div></div>
+          <div class="comic-panel"><div class="panel-art art-four"><span class="hero-star">✦</span><span class="scene-person">♟</span></div><div class="panel-copy"><b>04 · THE BIG MOMENT</b><p>It's time to take action.</p><span class="speech">Here we go!</span></div></div>
+        </div>
+        <div class="preview-foot"><span><i class="live-dot"></i> Preview updates when you generate</span><button id="regenerate" class="text-btn">↻ Regenerate</button></div>
+      </article>
+    </section>
+    <section class="bottom-row"><div class="tip-card"><div class="tip-icon">✧</div><div><b>Creative tip</b><p>Try adding a character, a place, and a challenge to make your story more vivid.</p></div></div><div class="feature"><span>▧</span><div><b>Panel by panel</b><small>Build a visual sequence</small></div></div><div class="feature"><span>✎</span><div><b>Made editable</b><small>Customize your story</small></div></div></section>
+    <footer>COMICCRAFT AI <span>•</span> Every great comic starts with an idea.</footer>
+  </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body></html>
